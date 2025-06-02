@@ -1,0 +1,46 @@
+Please append the following two functions at the end of "package_manager.py". Your implementation of the package manager, should satisfy all the tests in "test1.py" and "test2.py" 
+
+    # Notice how in some of the previous tests
+    # the solver returned "unsat" because
+    # a package cannot be installed under the presence of other packages.
+    # For example "chrome" and "firefox".
+
+    # An interesting question then is how can we actually install
+    # such packages while minimizing the number of removed packages?
+
+    # This is an example of a "Partial MaxSAT" problem.
+
+    # Partial MaxSAT take as input a set of "hard" clauses and
+    # a set of "soft" clauses and produces an assignment that
+    # satisfies all the hard clauses and the largest number of soft clauses.
+
+
+    #
+    # Implement `install_under_constraint` such that
+    # it satisfies all `hard` clauses and the largest
+    # number of `soft` clauses.
+    #
+    # In this setting, the hard constraint is `tgt_pkg` that
+    # you have to install and the
+    # soft contraints are `installed_pkgs` from which
+    # you want to keep the largest number of packages
+    # you can while still being able to install `tgt_pkg`.
+    #
+    # For this task, you will use the solver's `Optimize()`
+    # feature instead of `Solve()`.
+    #
+    # You already know how to add "hard" clauses,
+    # it's just: o.add(FORMULA).
+    #
+    # To add a "soft" clause, use: o.add_soft(FORMULA).
+    #
+    #
+    def install_under_constraint(self, repo, installed_pkgs, tgt_pkg):
+        pass
+
+    #
+    # Now generalize install_under_constraint
+    # to support multiple installed packages and target packages.
+    #
+    def install_many_under_constraint(self, repo, installed_pkgs, tgt_pkgs):
+        pass
